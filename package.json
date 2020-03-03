@@ -1,0 +1,32 @@
+{
+  "name": "package.json",
+  "version": "0.0.1",
+  "description": "compares two configuration files and shows the difference",
+  "main": "src/index.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanvovk/backend-project-lvl2.git"
+  },
+  "author": "Yan Vovk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanvovk/backend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/yanvovk/backend-project-lvl2#readme",
+  "type": "module",
+  "dependencies": {
+    "commander": "^4.1.1",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-plugin-import": "2.20.1"
+  }
+}
