@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import gendiff from '../src/index.js';
+import gendiff from '../src';
 
-gendiff()
+gendiff();

@@ -1,14 +1,13 @@
 import commander from 'commander';
-import genDiff from './genDiff.js'
+import genDiff from './genDiff.js';
 
 const help = () => {
-    console.log('\nUsage: gendiff [options] <firstConfig> <secondConfig>\n');
-    console.log('Compares two configuration files and shows a difference.\n');
-    console.log('Options:');
-    console.log('  -V, --version       output the version number');
-    console.log('  -h, --help          output usage information');
-    console.log('  -f, --format [type] output format')
-    return;
+  console.log('\nUsage: gendiff [options] <firstConfig> <secondConfig>\n');
+  console.log('Compares two configuration files and shows a difference.\n');
+  console.log('Options:');
+  console.log('  -V, --version       output the version number');
+  console.log('  -h, --help          output usage information');
+  console.log('  -f, --format [type] output format');
 };
 
 export default () => {
@@ -23,12 +22,12 @@ export default () => {
       const cmdVal1 = cmd1;
       const cmdVal2 = cmd2;
       console.log(genDiff(cmdVal1, cmdVal2));
-    })
+    });
 
   
   programm.parse(process.argv);
 
-  if(programm.version) {
+  if (programm.version) {
     console.log(programm.version);
   }
-};    
+};
