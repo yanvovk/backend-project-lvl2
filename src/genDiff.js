@@ -18,7 +18,7 @@ export default (path1, path2) => {
     }
   }, '');
   const added = data2Entries.reduce((acc, el) => {
-    const [key, value] = el
+    const [key, value] = el;
     if(!_.has(parcedData1, `${key}`)) {
       return acc + `+ ${key}: ${value}\n`
     } else {
