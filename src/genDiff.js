@@ -4,8 +4,8 @@ import _ from 'lodash';
 import yaml from 'js-yaml';
 
 const parsers = {
-    '.json': (data) => JSON.parse(data),
-    '.yml': (data) => yaml.safeLoad(data)
+  '.json': (data) => JSON.parse(data),
+  '.yml': (data) => yaml.safeLoad(data),
 };
 
 export default (path1, path2) => {
@@ -20,15 +20,15 @@ export default (path1, path2) => {
   const changedAndRemoved = data1Entries.reduce((acc, el) => {
     const [key, value] = el;
     if (_.has(parcedData2, `${key}`)) {
-      return parcedData2[key] === value ? `${acc}  ${key}: ${value}\n` 
-      : `${acc}+ ${key}: ${parcedData2[key]}\n- ${key}: ${value}\n`;
+      return parcedData2[key] === value ? `${acc}  ${key}: ${value}\n`
+        : `${acc}+ ${key}: ${parcedData2[key]}\n- ${key}: ${value}\n`;
     }
     return `${acc}- ${key}: ${value}\n`;
   }, '');
   const added = data2Entries.reduce((acc, el) => {
     const [key, value] = el;
     if (!_.has(parcedData1, `${key}`)) {
-      return `${acc}+ ${key}: ${value}\n`
+      return `${acc}+ ${key}: ${value}\n`;
     }
     return acc;
   }, '');

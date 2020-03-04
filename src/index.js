@@ -24,7 +24,6 @@ export default () => {
       console.log(genDiff(cmdVal1, cmdVal2));
     });
 
-  
   programm.parse(process.argv);
 
   if (programm.version) {
