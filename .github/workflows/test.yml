@@ -6,11 +6,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: paambaati/codeclimate-action@v2.5.4
-      - run: |
-          npm install jest babel-jest @babel/core @babel/preset-env @babel/plugin-proposal-pipeline-operator
-      - env: 
+      - name: Test
+        uses: paambaati/codeclimate-action@v2.5.4
+        env: 
           CC_TEST_REPORTER_ID: f162b90f3716c06428af8a0e46b197ea6d8e12f06a9dc54854895e84d746200a
-      - with:
-          coverageCommand: make test
+        with:
+          coverageCommand: |
+             npm install jest babel-jest @babel/core @babel/preset-env @babel/plugin-proposal-pipeline-operator | make test
           debug: true
