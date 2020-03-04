@@ -9,6 +9,8 @@ jobs:
       - name: Install
         run: |
            npm install jest babel-jest @babel/core @babel/preset-env @babel/plugin-proposal-pipeline-operator
+        env:
+          CI: true   
       - name: Test
         uses: paambaati/codeclimate-action@v2.5.4
         env: 
