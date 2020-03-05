@@ -10,4 +10,12 @@ const expectedResult = `  host: hexlet.io
 
 test('JSONgendiff', () => {
   expect(genDiff(`${__dirname}/__fixtures__/first.json`, `${__dirname}/__fixtures__/second.json`)).toBe(expectedResult);
-})
+});
+
+test('YAMLgendiff', () => {
+  expect(genDiff(`${__dirname}/__fixtures__/first.yml`, `${__dirname}/__fixtures__/second.yml`)).toBe(expectedResult);
+});
+
+test('INIgendiff', () => {
+  expect(genDiff(`${__dirname}/__fixtures__/first.ini`, `${__dirname}/__fixtures__/second.ini`)).toBe(expectedResult);
+});
