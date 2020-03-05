@@ -1,20 +1,9 @@
-import fs from 'fs';
-import path from 'path';
 import _ from 'lodash';
-import yaml from 'js-yaml';
-
-const parsers = {
-  '.json': (data) => JSON.parse(data),
-  '.yml': (data) => yaml.safeLoad(data),
-};
+import parser from './parsers.js'
 
 export default (path1, path2) => {
-  const extname1 = path.extname(path1);
-  const extname2 = path.extname(path2);
-  const data1 = fs.readFileSync(path1);
-  const data2 = fs.readFileSync(path2);
-  const parcedData1 = parsers[extname1](data1);
-  const parcedData2 = parsers[extname2](data2);
+  const parcedData1 = parser(path1);
+  const parcedData2 = parser(path2);
   const data1Entries = Object.entries(parcedData1);
   const data2Entries = Object.entries(parcedData2);
   const changedAndRemoved = data1Entries.reduce((acc, el) => {
