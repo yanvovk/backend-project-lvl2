@@ -1,11 +1,11 @@
 import _ from 'lodash';
-import parser from './parsers.js'
+import parser from './parsers.js';
 
 export default (path1, path2) => {
-  const parcedData1 = parser(path1);
-  const parcedData2 = parser(path2);
-  const data1Entries = Object.entries(parcedData1);
-  const data2Entries = Object.entries(parcedData2);
+  const parsedData1 = parser(path1);
+  const parsedData2 = parser(path2);
+  const data1Entries = Object.entries(parsedData1);
+  const data2Entries = Object.entries(parsedData2);
   const changedAndRemoved = data1Entries.reduce((acc, el) => {
     const [key, value] = el;
     if (_.has(parcedData2, `${key}`)) {
