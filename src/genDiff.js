@@ -10,7 +10,7 @@ export default (path1, path2) => {
     const [key, value] = el;
     if (_.has(parsedData2, `${key}`)) {
       return parsedData2[key] === value ? `${acc}  ${key}: ${value}\n`
-        : `${acc}+ ${key}: ${parcedData2[key]}\n- ${key}: ${value}\n`;
+        : `${acc}+ ${key}: ${parsedData2[key]}\n- ${key}: ${value}\n`;
     }
     return `${acc}- ${key}: ${value}\n`;
   }, '');
