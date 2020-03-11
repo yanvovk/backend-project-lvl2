@@ -1,5 +1,16 @@
 {
     "timeout": 20,
     "verbose": true,
-    "host": "hexlet.io"
+    "host": "hexlet.io",
+    "qwerty": {
+      "abcd" : "defg",
+      "animals": {
+        "cat": 1,
+        "dog": 2,
+        "mm": {
+          "nn": 44
+        }
+      }
+    },
+    "jj": "ll"
   }

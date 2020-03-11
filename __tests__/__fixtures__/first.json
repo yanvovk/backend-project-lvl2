@@ -2,5 +2,15 @@
     "host": "hexlet.io",
     "timeout": 50,
     "proxy": "123.234.53.22",
-    "follow": false
+    "follow": false,
+    "qwerty": {
+      "abcd" : "defg",
+      "animals": {
+        "cat": 2,
+        "dog": 1,
+        "mmn": {
+          "nn": 44
+        }
+      }
+    }
   }
