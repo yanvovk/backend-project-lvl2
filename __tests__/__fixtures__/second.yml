@@ -1,3 +1,11 @@
 timeout: 20
 verbose: true
 host: hexlet.io
+qwerty: 
+  abcd : defg
+  jj: ll
+  animals:
+      cat: 1
+      dog: 2
+      mm: 
+        nn: 44

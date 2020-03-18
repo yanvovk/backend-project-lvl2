@@ -1,5 +1,6 @@
 import commander from 'commander';
-import genDiff from './genDiff.js';
+import FormatInterface from './formatInterface.js'
+
 
 const help = () => {
   console.log('\nUsage: gendiff [options] <firstConfig> <secondConfig>\n');
@@ -16,12 +17,18 @@ export default () => {
   programm
     .option('-V, --version', 'output the version number')
     .option('-h, --help', 'output usage information', help)
+    .option('-f, --format [type]', 'output format')
     .on('--help', help)
     .arguments('<cmd1> <cmd2> [env]')
-    .action((cmd1, cmd2) => {
+    .action((cmd1, cmd2,) => {
       const cmdVal1 = cmd1;
       const cmdVal2 = cmd2;
-      console.log(genDiff(cmdVal1, cmdVal2));
+      const _format = new FormatInterface(cmdVal1, cmdVal2)
+      if(programm.format) {
+        console.log(_format[programm.format]());
+      }
+      console.log(_format.objective());
+      
     });
 
   programm.parse(process.argv);

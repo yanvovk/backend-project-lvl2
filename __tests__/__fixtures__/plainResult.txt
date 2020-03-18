@@ -1,0 +1,9 @@
+Property timeout was changed from 50 to 20
+Property proxy was deleted
+Property follow was deleted
+Property qwerty.animals.cat was changed from 2 to 1
+Property qwerty.animals.dog was changed from 1 to 2
+Property qwerty.animals.mmn was deleted
+Property qwerty.animals.mm was added with value: [complex value]
+Property qwerty.jj was added with value: ll
+Property verbose was added with value: true
