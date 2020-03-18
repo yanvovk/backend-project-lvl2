@@ -1,5 +1,5 @@
 import commander from 'commander';
-import FormatInterface from './formatInterface.js'
+import FormatInterface from './formatInterface.js';
 
 
 const help = () => {
@@ -20,17 +20,16 @@ export default () => {
     .option('-f, --format [type]', 'output format')
     .on('--help', help)
     .arguments('<cmd1> <cmd2> [env]')
-    .action((cmd1, cmd2,) => {
+    .action((cmd1, cmd2) => {
       const cmdVal1 = cmd1;
       const cmdVal2 = cmd2;
-      const _format = new FormatInterface(cmdVal1, cmdVal2)
-      if(programm.format) {
-        console.log(_format[programm.format]());
+      const formatter = new FormatInterface(cmdVal1, cmdVal2);
+      if (programm.format) {
+        console.log(formatter[programm.format]());
+      } else {
+        console.log(formatter.objective());
       }
-      console.log(_format.objective());
-      
     });
-
   programm.parse(process.argv);
 
   if (programm.version) {
